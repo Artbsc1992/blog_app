@@ -7,8 +7,6 @@ RSpec.describe Like, type: :model do
                         likesCount: 1)
   like = Like.new(user: valid_user, post: valid_post)
 
-  comment = Comment.new(text: 'comment')
-
   context 'test valid like' do
     it 'creates a valid like with valid information' do
       expect(like).to be_valid

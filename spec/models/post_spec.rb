@@ -11,7 +11,6 @@ RSpec.describe Post, type: :model do
   valid_post.save
   invalid_title_post = Post.new(user: valid_user, title: invalid_title, text: 'this is post text', commentsCount: 11,
                                 likesCount: 1)
-  invalid_no_title_post = Post.new(user: valid_user, text: 'this is post text', commentsCount: 11, likesCount: 1)
   invalid_coment_count_type_post = Post.new(user: valid_user, title: valid_title, text: 'this is post text',
                                             commentsCount: 'sting', likesCount: 1)
   invalid_coment_count_negative_post = Post.new(user: valid_user, title: valid_title, text: 'this is post text',
@@ -55,7 +54,7 @@ RSpec.describe Post, type: :model do
   context 'most recent comment method works as expected' do
     it 'it returns a valid type' do
       expect(valid_post.most_recent_comments.length).to eq(0)
-      Comment.create(user: valid_user, post: valid_post, text: 'Hi Tom!')    
+      Comment.create(user: valid_user, post: valid_post, text: 'Hi Tom!')
       expect(valid_post.most_recent_comments.length).to eq(1)
     end
   end
