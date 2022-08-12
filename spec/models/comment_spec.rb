@@ -7,6 +7,12 @@ RSpec.describe Comment, type: :model do
                         likesCount: 1)
   comment = Comment.new(user: valid_user, post: valid_post, text: 'Hi Tom!')
 
+  before do
+    valid_user.save
+    valid_post.save
+    comment.save
+  end
+
   context 'test valid comment' do
     it 'creates a valid comment with valid information' do
       expect(comment).to be_valid
@@ -15,8 +21,15 @@ RSpec.describe Comment, type: :model do
 
   context 'save and retrive valid comment' do
     it 'save valid comment and retirive it from database' do
-      comment.save
-      expect(Comment.find(comment.id)).to be_an_instance_of(Comment)
+      expect(comment).to be_an_instance_of(Comment)
+    end
+  end
+
+  context 'Update comment counter' do
+    it 'should add 1 to posts comments counter' do
+      expect(valid_post.commentsCount).to eq(11)
+      comment.update_comment_counter
+      expect(valid_post.commentsCount).to eq(12)
     end
   end
 end

@@ -2,7 +2,8 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
 
-  def self.update_comment_counter(post)
-    post.update(commentCount: Comment.where(post:).count)
+  def update_comment_counter
+    post.commentsCount = post.commentsCount + 1
+    post.save
   end
 end
