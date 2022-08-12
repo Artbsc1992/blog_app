@@ -4,8 +4,8 @@ class CreatePost < ActiveRecord::Migration[7.0]
       t.belongs_to :user, foreign_key: true
       t.string :title
       t.string :text
-      t.integer :commentsCounter
-      t.integer :likeCounter
+      t.integer :commentsCount, default: 0
+      t.integer :likesCount, default: 0
 
       t.timestamps
     end
