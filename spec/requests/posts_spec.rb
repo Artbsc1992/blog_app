@@ -7,7 +7,7 @@ RSpec.describe 'PostsController', type: :request do
     end
 
     it 'should return an HTTP status 200 (ok)' do
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(:ok)
     end
 
     it 'should render the users/:id/posts template' do
@@ -25,7 +25,7 @@ RSpec.describe 'PostsController', type: :request do
     end
 
     it 'should return an HTTP status 200 (ok)' do
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(:ok)
     end
 
     it 'should render the users/:id/posts/:id template' do
