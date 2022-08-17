@@ -1,1 +1,26 @@
-<h1>Posts list</h1>
+<div class= "user">
+  <img src="<%= @user.photo %>" class="profile-pic"/>
+  <div class="user-info">
+    <h2><%= link_to @user.name, @user %></h2>
+    <p>Number of Posts:
+      <%= @user.postCount %></p>
+  </div>
+</div>
+<% @posts.each do |post| %>
+  <div class="posts">
+    <h2><%= link_to post.title, url_for([@user, post]) %></h2>
+    <p><%= post.text %></p>
+    <p>Number of comments: <%= post.commentsCount %>
+      - Number of likes: <%= post.likesCount %>
+    </p>
+    </div>
+    <div class="comments">
+    <p>Comments:</p>
+      <ul>
+        <% post.comments.each do |comment| %>
+        <li><strong><%=comment.user.name%>: </strong><%=comment.text %></li>
+        <% end %>
+      </ul>
+    </div>
+  
+<% end %>
