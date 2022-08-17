@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 user_1 = User.create(name: 'Tom', photo: 'https://1.bp.blogspot.com/-W_7SWMP5Rag/YTuyV5XvtUI/AAAAAAAAuUQ/hm6bYcvlFgQqgv1uosog6K8y0dC9eglTQCLcBGAsYHQ/s880/Best-Profile-Pic-For-Boys%2B%25281%2529.jpg', bio: 'Exercitation est occaecat sunt elit id deserunt.', postCount: 0)
-user_2 = User.create(name: 'John', photo: 'whatsappprofiledpimages.com/wp-content/uploads/2021/11/2021-Simple-Whatsapp-Dp-Profile-Images-photo-hd.gif', bio: 'Laboris elit proident deserunt proident.', postCount: 0)
+user_2 = User.create(name: 'John', photo: 'https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg', bio: 'Laboris elit proident deserunt proident.', postCount: 0)
 user_3 = User.create(name: 'Jane', photo: 'https://pixlr.com/studio/template/6264364c-b8cc-4f4f-92d8-28c69a2b756w/thumbnail.webp', bio: 'Minim magna voluptate cillum ex culpa voluptate non cupidatat amet in incididunt eiusmod dolore officia.', postCount: 0)
 user_4 = User.create(name: 'Joe', photo: 'https://play-lh.googleusercontent.com/rMT8Gd9S9kYumvI15f5mozDaVk5bTkR9dSG4EfN7ph_yVHj0a0suzqqrBtPXr68rEgQ', bio: 'Esse esse nulla cillum amet.', postCount: 0)
 user_5 = User.create(name: 'Jill', photo: 'https://qph.cf2.quoracdn.net/main-thumb-1278318002-200-ydzfegagslcexelzgsnplcklfkienzfr.jpeg', bio: 'Aute magna aute eiusmod culpa proident aute ipsum amet eiusmod.', postCount: 0)
