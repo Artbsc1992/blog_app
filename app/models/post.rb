@@ -9,6 +9,8 @@ class Post < ApplicationRecord
   validates :likesCount, numericality: { only_integer: true }
   validates :likesCount, comparison: { greater_than_or_equal_to: 0 }
 
+  after_create :update_post_counter
+
   def update_post_counter
     user.postCount = user.postCount + 1
     user.save
