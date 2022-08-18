@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.order(:created_at => :desc)
   end
 
   def show
@@ -11,7 +11,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @user = current_user
   end
 
   def create
@@ -22,5 +21,10 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end

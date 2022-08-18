@@ -55,7 +55,7 @@ a {
   border: 1px solid #000;
 }
 
-.posts p {
+.posts .right {
   align-self: flex-end;
 }
 
