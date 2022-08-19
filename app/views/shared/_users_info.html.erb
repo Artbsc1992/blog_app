@@ -1,7 +1,7 @@
-<div class="flex flex-col md:flex-row justify-evenly">
-    <img src="<%=user.photo%>" class="inline-block h-20 w-20 rounded-full ring-2 ring-red flex-none "/>
+<div class="flex flex-col h-24 md:flex-row justify-evenly border-solid border-2 rounded-lg bg-slate-100 mb-5">
+    <img src="<%=user.photo%>" class="inline-block h-20 w-20 rounded-full ring-2 ring-red flex-none self-center"/>
     <div class="flex w-2/4 justify-evenly">
-      <h2 class="items-bottom justify-start"><%= link_to user.name, user %></h2>
+      <h2 class="text-xl items-bottom justify-start"><%= link_to user.name, user %></h2>
       <p class="self-end">Number of posts: <%= user.postCount %></p>
     </div>
   </div>
