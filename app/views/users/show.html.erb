@@ -15,8 +15,9 @@
   <div class="posts">
     <h2><%= post.title %></h2>
     <p><%= post.text %></p>
-    <p>Number of comments: <%= post.commentsCount %>
+    <p class="right">Number of comments: <%= post.commentsCount %>
       - Number of likes: <%= post.likesCount %>
+      <%= button_to 'Like', user_post_likes_path(post.user, post), class: "like" %>
     </p>
   </div>
 <% end %>

@@ -33,3 +33,14 @@ a {
 .user-info p {
   align-self: flex-end;
 }
+
+.new-post {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: red;
+}

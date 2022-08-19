@@ -12,15 +12,17 @@
     <p><%= post.text %></p>
     <p>Number of comments: <%= post.commentsCount %>
       - Number of likes: <%= post.likesCount %>
+      <%= button_to 'Like', user_post_likes_path(post.user, post), class: "like" %>
     </p>
     </div>
     <div class="comments">
-    <p>Comments:</p>
-      <ul>
-        <% post.comments.each do |comment| %>
-        <li><strong><%=comment.user.name%>: </strong><%=comment.text %></li>
-        <% end %>
-      </ul>
+      <p>Comments:</p>
+        <ul>
+          <% post.comments.each do |comment| %>
+          <li><strong><%=comment.user.name%>: </strong><%=comment.text %></li>
+          <% end %>
+        </ul>
+        <%= link_to 'Add a comment', new_user_post_comment_path(@user, post), class: "add-comment" %>
     </div>
   
 <% end %>
