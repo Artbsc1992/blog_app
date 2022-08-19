@@ -1,4 +1,4 @@
-<%= link_to 'New Post', new_post_path(@user), class: "new-post" %>
+<div class="home">
 <% @users.each do |user| %>
   <div class="user">
     <img src="<%=user.photo%>" class="profile-pic"/>
@@ -8,3 +8,5 @@
     </div>
   </div>
 <% end %>
+<%= link_to 'New Post', new_post_path(@user), class: "new-post" %>
+</div>
