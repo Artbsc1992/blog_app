@@ -1,7 +1,10 @@
-<div class="user">
-    <img src="<%=user.photo%>" class="profile-pic"/>
-    <div class="user-info">
-      <h2 class="text-4xl"><%= link_to user.name, user %></h2>
-      <p>Number of posts: <%= user.postCount %></p>
+<div class="flex flex-col md:flex-row justify-evenly">
+    <img src="<%=user.photo%>" class="inline-block h-20 w-20 rounded-full ring-2 ring-red flex-none "/>
+    <div class="flex w-2/4 justify-evenly">
+      <h2 class="items-bottom justify-start"><%= link_to user.name, user %></h2>
+      <p class="self-end">Number of posts: <%= user.postCount %></p>
     </div>
   </div>
+
+
+  

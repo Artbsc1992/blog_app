@@ -1,5 +1,6 @@
-<div class="home">
+<div class="w-full">
   <% @users.each do |user| %>
     <%= render '/shared/users_info', user: user %>
   <% end %>
+  <%= link_to 'New Post', new_post_path(@user), class: "new-post" %>
 </div>
