@@ -4,6 +4,15 @@ example_id                                  | status  | run_time        |
 ./spec/features/home_spec.rb[1:2]           | passed  | 0.79249 seconds |
 ./spec/features/home_spec.rb[1:3]           | passed  | 0.85272 seconds |
 ./spec/features/home_spec.rb[1:4]           | passed  | 2.92 seconds    |
+./spec/features/post_spec.rb[1:1]           | passed  | 0.6818 seconds  |
+./spec/features/post_spec.rb[1:2]           | passed  | 0.60431 seconds |
+./spec/features/post_spec.rb[1:3]           | passed  | 0.66717 seconds |
+./spec/features/post_spec.rb[1:4]           | passed  | 0.66499 seconds |
+./spec/features/post_spec.rb[1:5]           | passed  | 3.23 seconds    |
+./spec/features/post_spec.rb[1:6]           | passed  | 0.63416 seconds |
+./spec/features/post_spec.rb[1:7]           | passed  | 0.65056 seconds |
+./spec/features/post_spec.rb[1:8]           | passed  | 0.68208 seconds |
+./spec/features/post_spec.rb[1:9]           | passed  | 0.63253 seconds |
 ./spec/features/users_spec.rb[1:1]          | passed  | 0.54406 seconds |
 ./spec/features/users_spec.rb[1:2]          | passed  | 0.50936 seconds |
 ./spec/features/users_spec.rb[1:3]          | passed  | 0.57549 seconds |

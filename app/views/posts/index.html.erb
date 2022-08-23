@@ -1,5 +1,5 @@
 <div class= "user">
-  <img src="<%= @user.photo %>" class="profile-pic"/>
+  <img src="<%= @user.photo %>" alt="<%=@user.name%>" class="profile-pic"/>
   <div class="user-info">
     <h2><%= link_to @user.name, @user %></h2>
     <p>Number of Posts:

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Home page', type: :system do
+RSpec.describe 'User page', type: :system do
   
   it 'shows the names of the users' do
     visit('http://localhost:3000/users/1')
