@@ -5,21 +5,22 @@ RSpec.describe 'Post', type: :system do
     visit('http://localhost:3000/users/1/posts/11')
     expect(page).to have_content('My first post')
   end
-=begin 
+
   it 'displays who wrote the post' do
-    visit('http://localhost:3000/users/136/posts/140')
-    expect(page).to have_content('Lilly')
+    visit('http://localhost:3000/users/1/posts/11')
+    expect(page).to have_content('Tom')
   end
-
+  
   it 'shows how many comments the post has' do
-    visit('http://localhost:3000/users/136/posts/140')
-    expect(page).to have_content('Comments: 11')
+    visit('http://localhost:3000/users/1/posts/11')
+    expect(page).to have_content('Comments: 2')
   end
-
+  
   it 'shows how many likes the post has' do
-    visit('http://localhost:3000/users/136/posts/140')
-    expect(page).to have_content('Likes: 2') 
+    visit('http://localhost:3000/users/1/posts/11')
+    expect(page).to have_content('Likes: 1') 
   end
+=begin 
 
   it 'shows posts body' do
     visit('http://localhost:3000/users/136/posts/140')
