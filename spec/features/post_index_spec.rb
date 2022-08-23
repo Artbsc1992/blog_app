@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Post', type: :system do
   it 'shows the post title' do
     visit('http://localhost:3000/users/1/posts/11')
-    expect(page).to have_content('My first post')
+    expect(page).to have_content('My first Post')
   end
 
   it 'displays who wrote the post' do
