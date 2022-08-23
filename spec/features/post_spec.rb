@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Post page', type: :system do
-  
   it 'shows the names of the users' do
     visit('http://localhost:3000/users/1/posts')
-    expect(page).to have_content('Tom') 
+    expect(page).to have_content('Tom')
   end
 
   it 'shows profile picture of User id:1' do
@@ -20,7 +19,7 @@ RSpec.describe 'Post page', type: :system do
   it 'show post title' do
     visit('http://localhost:3000/users/1/posts')
     expect(page).to have_content('Lorem ipsum')
-  end 
+  end
 
   it 'show post content' do
     visit('http://localhost:3000/users/1/posts')
@@ -46,5 +45,4 @@ RSpec.describe 'Post page', type: :system do
     visit('http://localhost:3000/users/1/posts')
     expect(page).to have_link('Lorem ipsum dolor sit amet, consectetur adipiscing elit', href: '/users/1/posts/5')
   end
-
 end

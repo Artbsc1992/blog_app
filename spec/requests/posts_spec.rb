@@ -25,7 +25,7 @@ RSpec.describe 'PostsController', type: :request do
     before do
       user = User.new(name: 'Tom', bio: 'I am a developer', photo: 'photo.png', postCount: 5)
       user.save
-      post = Post.new(user: user, title: 'Post title', text: 'Post text')
+      post = Post.new(user:, title: 'Post title', text: 'Post text')
       post.save
       get user_post_path(user_id: user.id, id: post.id)
     end

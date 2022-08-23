@@ -1,12 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Home page', type: :system do
-  
   it 'shows the names of the users' do
     visit('http://localhost:3000/')
-    expect(page).to have_content('Tom') 
+    expect(page).to have_content('Tom')
     expect(page).to have_content('John')
-    expect(page).to have_content('Jane') 
+    expect(page).to have_content('Jane')
     expect(page).to have_content('Joe')
     expect(page).to have_content('Jill')
   end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   let(:user) { User.create!(name: 'Arturo', photo: 'www.google.com', bio: 'magician') }
-  let(:post) { Post.create!(user: user, title: 'hello', text: 'hello2') }
+  let(:post) { Post.create!(user:, title: 'hello', text: 'hello2') }
 
   describe 'title should be present' do
     it 'thus its not valid' do

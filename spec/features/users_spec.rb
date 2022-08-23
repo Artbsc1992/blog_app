@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'User page', type: :system do
-  
   it 'shows the names of the users' do
     visit('http://localhost:3000/users/1')
-    expect(page).to have_content('Tom') 
+    expect(page).to have_content('Tom')
   end
 
   it 'shows profile picture of User id:1' do
@@ -30,9 +29,9 @@ RSpec.describe 'User page', type: :system do
   it 'shows link to index#post' do
     visit('http://localhost:3000/users/1')
     expect(page).to have_link('See all posts', href: '/users/1/posts')
-  end 
+  end
 
-  it 'It redirect to each post' do 
+  it 'It redirect to each post' do
     visit('http://localhost:3000/users/1')
     expect(page).to have_link('Lorem ipsum', href: '/users/1/posts/5')
   end
@@ -40,5 +39,5 @@ RSpec.describe 'User page', type: :system do
   it 'link redirect to index#post' do
     visit('http://localhost:3000/users/1')
     expect(page).to have_link('', href: '/users/1/posts')
-  end 
+  end
 end
