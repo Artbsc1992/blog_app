@@ -43,10 +43,10 @@ RSpec.describe User, type: :model do
   end
 
   context 'most recent posts method works as expected' do
-    user = User.first
     it 'it returns a valid type' do
+      user = valid_user
       recent_posts = user.most_recent_posts
-      expect(recent_posts.length).to be_a_kind_of(Integer)
+      expect(recent_posts.length).to eq(0)
     end
   end
 end
