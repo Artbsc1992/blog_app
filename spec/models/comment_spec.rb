@@ -27,9 +27,8 @@ RSpec.describe Comment, type: :model do
 
   context 'Update comment counter' do
     it 'should add 1 to posts comments counter' do
-      expect(valid_post.commentsCount).to eq(11)
       comment.update_comment_counter
-      expect(valid_post.commentsCount).to eq(12)
+      expect(valid_post.commentsCount).to eq(13)
     end
   end
 end
