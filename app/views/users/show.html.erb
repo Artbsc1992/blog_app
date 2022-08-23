@@ -1,5 +1,5 @@
 <div class= "user">
-  <img src="<%= @user.photo %>" class="profile-pic"/>
+  <img src="<%= @user.photo %>" alt="<%=@user.name%>" class="profile-pic"/>
   <div class="user-info">
     <h2><%= link_to @user.name, @user %></h2>
     <p>Number of Posts:
@@ -13,7 +13,7 @@
 </div>
 <% @user.most_recent_posts.each do |post| %>
   <div class="posts">
-    <h2><%= post.title %></h2>
+    <h2><%= link_to post.title, url_for([@user, post]) %></h2>
     <p><%= post.text %></p>
     <p class="right">Number of comments: <%= post.commentsCount %>
       - Number of likes: <%= post.likesCount %>
