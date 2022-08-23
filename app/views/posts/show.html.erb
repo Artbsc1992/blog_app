@@ -12,7 +12,7 @@
   <div class="comments">
     <p>Comments: </p>
     <ul>
-      <% @comments.each do |comment| %>
+      <% @comments.includes([:user]).each do |comment| %>
         <li> 
           <strong><%= comment.user.name %>: </strong><%= comment.text %>
         </li>
