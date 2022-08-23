@@ -14,7 +14,7 @@ RSpec.describe 'User page', type: :system do
 
   it 'shows numbers of posts' do
     visit('http://localhost:3000/users/1')
-    expect(page).to have_content('Number of Posts: 16')
+    expect(page).to have_content('Number of Posts: 5')
   end
 
   it 'shows user bio' do
@@ -34,7 +34,7 @@ RSpec.describe 'User page', type: :system do
 
   it 'It redirect to each post' do 
     visit('http://localhost:3000/users/1')
-    expect(page).to have_link('Hello', href: '/users/1/posts/21')
+    expect(page).to have_link('Lorem ipsum', href: '/users/1/posts/5')
   end
 
   it 'link redirect to index#post' do

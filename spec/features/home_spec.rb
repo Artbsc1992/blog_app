@@ -22,7 +22,7 @@ RSpec.describe 'Home page', type: :system do
 
   it 'shows numbers of posts' do
     visit('http://localhost:3000/')
-    expect(page).to have_content('Number of posts: 16')
+    expect(page).to have_content('Number of posts: 5')
     expect(page).to have_content('Number of posts: 5')
     expect(page).to have_content('Number of posts: 0')
     expect(page).to have_content('Number of posts: 0')

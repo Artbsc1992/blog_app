@@ -14,37 +14,37 @@ RSpec.describe 'Post page', type: :system do
 
   it 'shows numbers of posts' do
     visit('http://localhost:3000/users/1/posts')
-    expect(page).to have_content('Number of Posts: 16')
+    expect(page).to have_content('Number of Posts: 5')
   end
 
   it 'show post title' do
     visit('http://localhost:3000/users/1/posts')
-    expect(page).to have_content('My first Post')
+    expect(page).to have_content('Lorem ipsum')
   end 
 
   it 'show post content' do
     visit('http://localhost:3000/users/1/posts')
-    expect(page).to have_content('This is my first post!')
+    expect(page).to have_content('Lorem ipsum dolor sit amet')
   end
 
   it 'show first comment of post' do
     visit('http://localhost:3000/users/1/posts')
-    expect(page).to have_content('Hello')
+    expect(page).to have_content('In dictum non consectetur a erat nam!')
   end
 
   it 'show how many comments of post' do
     visit('http://localhost:3000/users/1/posts')
-    expect(page).to have_content('Number of comments: 2')
+    expect(page).to have_content('Number of comments: 4')
   end
 
   it 'show how many likes of post' do
     visit('http://localhost:3000/users/1/posts')
-    expect(page).to have_content('Number of likes: 1')
+    expect(page).to have_content('Number of likes: 0')
   end
 
   it 'shows link to show#posts' do
     visit('http://localhost:3000/users/1/posts')
-    expect(page).to have_link('My first Post', href: '/users/1/posts/11')
+    expect(page).to have_link('Lorem ipsum dolor sit amet, consectetur adipiscing elit', href: '/users/1/posts/5')
   end
 
 end
