@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe 'UsersController', type: :request do
   describe 'GET /users' do
     before do
+      user = User.new(name: 'Tom', bio: 'I am a developer', photo: 'photo.png', postCount: 5)
+      user.save
       get users_path
     end
 
@@ -15,13 +17,15 @@ RSpec.describe 'UsersController', type: :request do
     end
 
     it "Body should include the text 'Users'" do
-      expect(response.body).to include('List of users')
+      expect(response.body).to include('Tom')
     end
   end
 
   describe 'GET /users/:id' do
     before do
-      get user_path(id: 'id')
+      user = User.new(name: 'Tom', bio: 'I am a developer', photo: 'photo.png', postCount: 5)
+      user.save
+      get user_path(id: 1)
     end
 
     it 'should return an HTTP status 200 (ok)' do
@@ -33,7 +37,7 @@ RSpec.describe 'UsersController', type: :request do
     end
 
     it "Body should include the text 'User'" do
-      expect(response.body).to include('show individual user')
+      expect(response.body).to include('Tom')
     end
   end
 end

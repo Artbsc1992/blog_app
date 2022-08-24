@@ -1,12 +1,12 @@
 <div class= "user">
-  <img src="<%= @user.photo %>" class="profile-pic"/>
+  <img src="<%= @user.photo %>" alt="<%=@user.name%>" class="profile-pic"/>
   <div class="user-info">
     <h2><%= link_to @user.name, @user %></h2>
     <p>Number of Posts:
       <%= @user.postCount %></p>
   </div>
 </div>
-<% @posts.each do |post| %>
+<% @posts.includes([:user]).each do |post| %>
   <div class="posts">
     <h2><%= link_to post.title, url_for([@user, post]) %></h2>
     <p><%= post.text %></p>
@@ -18,7 +18,7 @@
     <div class="comments">
       <p>Comments:</p>
         <ul>
-          <% post.comments.each do |comment| %>
+          <% post.comments.includes(:user).each do |comment| %>
           <li><strong><%=comment.user.name%>: </strong><%=comment.text %></li>
           <% end %>
         </ul>
