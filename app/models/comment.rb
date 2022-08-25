@@ -15,7 +15,7 @@ class Comment < ApplicationRecord
       post.commentsCount = 0
       post.save
     else
-      post.postCount = post.commentsCount - 1
+      post.commentsCount -= 1
       post.save
     end
   end

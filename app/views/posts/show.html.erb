@@ -19,7 +19,7 @@
         <li> 
           <strong><%= comment.user.name %>: </strong><%= comment.text %>
           <% if can? :destroy, comment %>
-              <%= button_to 'Delete comment', user_post_comments_path(comment.user_id, comment.post_id, comment.id), method: :delete, class: "delete" %>
+              <%= button_to 'Delete comment', user_post_comment_path(comment.user_id, comment.post_id, comment), method: :delete, class: "delete" %>
           <% end %>
         </li>
       <% end %>
