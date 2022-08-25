@@ -22,7 +22,9 @@
       <p>Comments:</p>
         <ul>
           <% post.comments.includes(:user).each do |comment| %>
-          <li><strong><%=comment.user.name%>: </strong><%=comment.text %></li>
+          <li><strong><%=comment.user.name%>: </strong><%=comment.text %>
+
+          </li>
           <% end %>
         </ul>
         <%= link_to 'Add a comment', new_user_post_comment_path(@user, post), class: "add-comment" %>
