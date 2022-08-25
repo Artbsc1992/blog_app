@@ -10,10 +10,21 @@ class Post < ApplicationRecord
   validates :likesCount, comparison: { greater_than_or_equal_to: 0 }
 
   after_create :update_post_counter
+  after_destroy :decrement_post_counter
 
   def update_post_counter
     user.postCount = user.postCount + 1
     user.save
+  end
+
+  def decrement_post_counter
+    if Post.all.length == 0
+      user.postCount = 0
+      user.save
+    else
+      user.postCount = user.postCount - 1
+      user.save
+    end
   end
 
   def most_recent_comments

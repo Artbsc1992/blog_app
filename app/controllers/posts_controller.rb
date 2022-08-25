@@ -23,6 +23,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @comments = Comment.where(post_id: @post.id)
+    @comments.destroy_all
+    @likes = Like.where(post_id: @post.id)
+    @likes.destroy_all
+    @post.destroy
+    current_user.postCount -= 1
+    flash[:success] = "Post deleted"
+    redirect_to root_path
+  end
+
   private
 
   def post_params

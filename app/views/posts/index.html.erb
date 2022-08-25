@@ -10,6 +10,7 @@
   <div class="posts">
     <h2><%= link_to post.title, url_for([@user, post]) %></h2>
     <p><%= post.text %></p>
+    <%= button_to 'Delete', user_post_path(post.user, post), method: :delete, class: "delete" %>
     <p>Number of comments: <%= post.commentsCount %>
       - Number of likes: <%= post.likesCount %>
       <%= button_to 'Like', user_post_likes_path(post.user, post), class: "like" %>

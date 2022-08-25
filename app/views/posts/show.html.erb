@@ -8,6 +8,7 @@
     <%= button_to 'Like', user_post_likes_path(@post.user, @post), class: "like" %>
   </div>
   <p><%= @post.text %></p>
+  <%= button_to 'Delete', user_post_path(@post.user, @post), method: :delete, class: "delete" %>
   </div>
   <div class="comments">
     <p>Comments: </p>
