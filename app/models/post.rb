@@ -18,13 +18,12 @@ class Post < ApplicationRecord
   end
 
   def decrement_post_counter
-    if Post.all.length == 0
-      user.postCount = 0
-      user.save
-    else
-      user.postCount = user.postCount - 1
-      user.save
-    end
+    user.postCount = if Post.all.length.zero?
+                       0
+                     else
+                       user.postCount - 1
+                     end
+    user.save
   end
 
   def most_recent_comments

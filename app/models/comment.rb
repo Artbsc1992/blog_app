@@ -11,12 +11,11 @@ class Comment < ApplicationRecord
   end
 
   def decrement_comment_counter
-    if Comment.all.length == 0
+    if Comment.all.length.zero?
       post.commentsCount = 0
-      post.save
     else
       post.commentsCount -= 1
-      post.save
     end
+    post.save
   end
 end

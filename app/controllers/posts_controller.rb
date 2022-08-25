@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     @likes.destroy_all
     @post.destroy
     current_user.postCount -= 1
-    flash[:success] = "Post deleted"
+    flash[:success] = 'Post deleted'
     redirect_to root_path
   end
 
