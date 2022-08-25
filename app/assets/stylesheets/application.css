@@ -78,3 +78,14 @@
   margin-top: 1em;
   padding: 0.5em 1em;
 }
+
+.remember {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.remember input[type=checkbox] {
+  width: auto;
+  flex-shrink: 1;
+}
