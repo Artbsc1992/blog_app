@@ -10,6 +10,9 @@
   <div class="posts">
     <h2><%= link_to post.title, url_for([@user, post]) %></h2>
     <p><%= post.text %></p>
+    <% if can? :destroy, post %>
+      <%= button_to 'Delete', user_post_path(post.user, post), method: :delete, class: "delete" %>
+    <% end %>
     <p>Number of comments: <%= post.commentsCount %>
       - Number of likes: <%= post.likesCount %>
       <%= button_to 'Like', user_post_likes_path(post.user, post), class: "like" %>
@@ -19,7 +22,11 @@
       <p>Comments:</p>
         <ul>
           <% post.comments.includes(:user).each do |comment| %>
-          <li><strong><%=comment.user.name%>: </strong><%=comment.text %></li>
+          <li><strong><%=comment.user.name%>: </strong><%=comment.text %>
+          <% if can? :destroy, comment %>
+              <%= button_to 'Delete comment', user_post_comment_path(comment.user_id, comment.post_id, comment), method: :delete, class: "delete" %>
+          <% end %>
+          </li>
           <% end %>
         </ul>
         <%= link_to 'Add a comment', new_user_post_comment_path(@user, post), class: "add-comment" %>

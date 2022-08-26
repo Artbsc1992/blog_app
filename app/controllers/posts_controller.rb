@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.order(created_at: :desc)
@@ -21,6 +22,18 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @comments = Comment.where(post_id: @post.id)
+    @comments.destroy_all
+    @likes = Like.where(post_id: @post.id)
+    @likes.destroy_all
+    @post.destroy
+    current_user.postCount -= 1
+    flash[:success] = 'Post deleted'
+    redirect_to root_path
   end
 
   private
